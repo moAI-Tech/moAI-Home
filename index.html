@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>moAI TECH — Soluções em TI & Telecom</title>
+  <meta name="description" content="Consultoria em Telecom, Gestão de Custos, Big Data e Automação." />
+  <meta name="theme-color" content="#084375" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/favicon.svg" />
+  <meta property="og:title" content="moAI TECH — Soluções em TI & Telecom" />
+  <meta property="og:description" content="Consultoria em Telecom, Gestão de Custos, Big Data e Automação." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-cover.png" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Arial', 'Noto Sans', 'sans-serif'] },
+          colors: {
+            brand: {
+              50:  '#e6eef4',
+              100: '#c3d6e6',
+              200: '#a0bed8',
+              300: '#7da6ca',
+              400: '#5a8ebc',
+              500: '#3776ae',
+              600: '#21609a',
+              700: '#084375', // principal
+              800: '#06345a',
+              900: '#04253f'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,.08)'
+          },
+          borderRadius: {
+            '2xl': '1.25rem',
+            xl2: '1rem'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Suaviza o fundo mantendo a paleta e bom contraste */
+    body { background: radial-gradient(1200px 600px at 100% -50%, rgba(8,67,117,.08), transparent), radial-gradient(900px 500px at -20% 10%, rgba(8,67,117,.06), transparent); }
+    .card { box-shadow: 0 8px 28px rgba(8,67,117,.08); }
+    .focus-ring { outline: 2px solid transparent; outline-offset: 2px; box-shadow: 0 0 0 3px rgba(8,67,117,.35); }
+    .no-underline:hover { text-decoration: none; }
+  </style>
+
+  <script>
+    // Menu mobile acessível
+    function toggleMenu() {
+      const btn = document.getElementById('menuBtn');
+      const nav = document.getElementById('mnav');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('hidden');
+    }
+  </script>
+</head>
+<body class="min-h-screen text-slate-800">
+  <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:bg-white focus:text-brand-700 focus:px-3 focus:py-2 focus:rounded-md focus-ring">Pular para o conteúdo</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 no-underline">
+        <img src="/assets/favicon.svg" alt="moAI TECH" class="h-8 w-6" loading="eager" decoding="async" />
+        <span class="font-semibold tracking-tight">moAI TECH</span>
+      </a>
+
+      <nav class="hidden md:flex gap-6 text-sm items-center">
+        <a class="px-2 font-semibold transition-colors hover:text-brand-700" aria-current="page" href="/index.html">Home</a>
+        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="/consultoria.html">Consultoria</a>
+        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="/gestao.html">Gestão de Custos</a>
+        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="/quem-somos.html">Quem Somos</a>
+        <a class="inline-flex items-center rounded-xl bg-brand-700 px-4 py-2 text-white font-semibold transition-colors hover:bg-brand-800 shadow-soft" href="/contato.html">Contato</a>
+      </nav>
+
+      <button id="menuBtn" class="md:hidden inline-flex p-2 rounded-lg hover:bg-slate-100" aria-label="Menu" aria-controls="mnav" aria-expanded="false" onclick="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <nav id="mnav" class="md:hidden hidden border-t bg-white">
+      <div class="mx-auto max-w-7xl px-4 py-3 grid gap-3 text-sm">
+        <a class="hover:text-brand-700" href="/index.html">Home</a>
+        <a class="hover:text-brand-700" href="/consultoria.html">Consultoria</a>
+        <a class="hover:text-brand-700" href="/gestao.html">Gestão de Custos</a>
+        <a class="hover:text-brand-700" href="/quem-somos.html">Quem Somos</a>
+        <a class="hover:text-brand-700" href="/contato.html">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- Hero -->
+    <section class="bg-gradient-to-b from-white to-brand-50/40">
+      <div class="mx-auto max-w-7xl px-4 py-20 grid gap-10 md:grid-cols-2 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-brand-800 leading-tight">
+            Tecnologia como base. <span class="text-brand-700">Automação no DNA.</span> Dados como ferramenta.
+          </h1>
+          <p class="mt-5 text-slate-600 max-w-prose">
+            Geramos <strong>valor</strong> e <strong>resultado</strong> com consultoria em Telecom, gestão de custos e soluções em Big Data &amp; Analytics.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="/contato.html" class="rounded-xl bg-brand-700 px-6 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Fale com a gente</a>
+            <a href="/consultoria.html" class="rounded-xl border border-brand-700 px-6 py-3 text-brand-700 font-semibold bg-white hover:bg-brand-50">Nossas soluções</a>
+          </div>
+
+          <!-- Trust bar / KPIs -->
+          <div class="mt-10 grid grid-cols-3 gap-6 text-center">
+            <div class="rounded-2xl bg-white p-4 card">
+              <div class="text-2xl font-extrabold text-brand-800">30–40%</div>
+              <div class="text-xs text-slate-600">média de redução de custos</div>
+            </div>
+            <div class="rounded-2xl bg-white p-4 card">
+              <div class="text-2xl font-extrabold text-brand-800">+10 TB</div>
+              <div class="text-xs text-slate-600">de dados analisados/ano</div>
+            </div>
+            <div class="rounded-2xl bg-white p-4 card">
+              <div class="text-2xl font-extrabold text-brand-800">SLA 99,9%</div>
+              <div class="text-xs text-slate-600">em projetos gerenciados</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <img src="/assets/imagem-economia.png" alt="Ilustração: economia de custos em TI e Telecom" class="rounded-2xl w-full max-w-md mx-auto" loading="lazy" decoding="async" />
+          <div class="absolute -bottom-6 -left-6 hidden md:block rounded-2xl bg-white p-4 shadow-soft">
+            <div class="text-sm">
+              <div class="font-semibold text-brand-700">Redução média de 30% a 40% em custos</div>
+              <div class="text-slate-500">Consultoria focada em Telecom</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soluções -->
+    <section class="mx-auto max-w-7xl px-4 py-16">
+      <header class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900">Soluções</h2>
+        <a href="/consultoria.html" class="text-sm font-semibold text-brand-700 hover:underline">Ver todas</a>
+      </header>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Card 1 -->
+        <a href="/consultoria.html" class="group card bg-white rounded-2xl p-6 border border-slate-100 transition hover:-translate-y-0.5 hover:shadow-lg block">
+          <div class="flex items-start justify-between">
+            <h3 class="font-semibold text-lg text-slate-900 group-hover:text-brand-700">Consultoria em Telecom</h3>
+            <span aria-hidden class="text-brand-200 group-hover:text-brand-500 transition">→</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Diagnóstico completo, otimização de recursos e redução de custos.</p>
+          <ul class="mt-4 text-xs text-slate-600 list-disc pl-5 space-y-1">
+            <li>Auditoria de faturas e contratos</li>
+            <li>Mapa de inventário e linhas</li>
+            <li>Plano de ação com ROI</li>
+          </ul>
+        </a>
+        <!-- Card 2 -->
+        <a href="/gestao.html" class="group card bg-white rounded-2xl p-6 border border-slate-100 transition hover:-translate-y-0.5 hover:shadow-lg block">
+          <div class="flex items-start justify-between">
+            <h3 class="font-semibold text-lg text-slate-900 group-hover:text-brand-700">Gestão Mensal de Custos</h3>
+            <span aria-hidden class="text-brand-200 group-hover:text-brand-500 transition">→</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">TEM com inventário, contas e melhoria contínua (PDCA).</p>
+          <ul class="mt-4 text-xs text-slate-600 list-disc pl-5 space-y-1">
+            <li>Concíliação recorrente</li>
+            <li>Alerts e KPIs gerenciais</li>
+            <li>Reports executivos mensais</li>
+          </ul>
+        </a>
+        <!-- Card 3 -->
+        <a href="/quem-somos.html" class="group card bg-white rounded-2xl p-6 border border-slate-100 transition hover:-translate-y-0.5 hover:shadow-lg block">
+          <div class="flex items-start justify-between">
+            <h3 class="font-semibold text-lg text-slate-900 group-hover:text-brand-700">Big Data &amp; Automação</h3>
+            <span aria-hidden class="text-brand-200 group-hover:text-brand-500 transition">→</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Pipelines, dashboards e automações que escalam com seu negócio.</p>
+          <ul class="mt-4 text-xs text-slate-600 list-disc pl-5 space-y-1">
+            <li>ClickHouse, Redis e FastAPI</li>
+            <li>ETL/ELT e qualidade de dados</li>
+            <li>Integrações e APIs</li>
+          </ul>
+        </a>
+      </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="bg-white/60 border-y border-slate-100">
+      <div class="mx-auto max-w-7xl px-4 py-16 grid gap-10 md:grid-cols-3">
+        <div class="md:col-span-1">
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900">Por que a moAI?</h2>
+          <p class="mt-3 text-slate-600">Foco em ROI rápido, contratos transparentes e execução técnica de ponta.</p>
+        </div>
+        <div class="md:col-span-2 grid sm:grid-cols-2 gap-6">
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+            <h3 class="font-semibold text-slate-900">Metodologia orientada a dados</h3>
+            <p class="mt-2 text-sm text-slate-600">Decisões lastreadas em evidências. Menos achismo, mais resultado.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+            <h3 class="font-semibold text-slate-900">Time técnico sênior</h3>
+            <p class="mt-2 text-sm text-slate-600">Experiência prática em Telecom, FinOps, bancos de dados e automação.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+            <h3 class="font-semibold text-slate-900">Implantação enxuta</h3>
+            <p class="mt-2 text-sm text-slate-600">Comece pequeno, com ganhos já no primeiro ciclo.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+            <h3 class="font-semibold text-slate-900">Transparência total</h3>
+            <p class="mt-2 text-sm text-slate-600">Relatórios claros, indicadores e acompanhamento contínuo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ curto -->
+    <section class="mx-auto max-w-7xl px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900">Perguntas frequentes</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        <details class="rounded-2xl border border-slate-200 bg-white p-6 open:shadow-soft">
+          <summary class="font-semibold cursor-pointer text-slate-900">Quanto tempo até vermos economia?</summary>
+          <p class="mt-2 text-sm text-slate-600">Normalmente entre 30 e 90 dias, dependendo da complexidade do ambiente e dos contratos.</p>
+        </details>
+        <details class="rounded-2xl border border-slate-200 bg-white p-6 open:shadow-soft">
+          <summary class="font-semibold cursor-pointer text-slate-900">Vocês trabalham por sucesso (success fee)?</summary>
+          <p class="mt-2 text-sm text-slate-600">Há modelos fixos, híbridos e por sucesso. Definimos juntos conforme seu objetivo.</p>
+        </details>
+        <details class="rounded-2xl border border-slate-200 bg-white p-6 open:shadow-soft">
+          <summary class="font-semibold cursor-pointer text-slate-900">Quais tecnologias vocês usam?</summary>
+          <p class="mt-2 text-sm text-slate-600">ClickHouse, Redis, FastAPI, pipelines SQL e integrações sob medida.</p>
+        </details>
+        <details class="rounded-2xl border border-slate-200 bg-white p-6 open:shadow-soft">
+          <summary class="font-semibold cursor-pointer text-slate-900">Conseguem atuar só em Telecom?</summary>
+          <p class="mt-2 text-sm text-slate-600">Sim. Temos ofertas específicas para Telecom e também pacotes completos de TI.</p>
+        </details>
+      </div>
+      <div class="mt-10">
+        <a href="/contato.html" class="inline-flex items-center justify-center rounded-xl bg-brand-700 px-6 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Fale com um especialista</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 border-t bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-10 grid gap-6 md:grid-cols-3 text-sm">
+      <div>
+        <div class="flex items-center gap-2">
+          <img src="/assets/favicon.svg" alt="moAI TECH" class="h-8 w-6" loading="lazy" />
+          <span class="font-semibold tracking-tight">moAI TECH</span>
+        </div>
+        <p class="mt-4 text-slate-600">Soluções em TI &amp; Telecom com foco em redução de custos, Big Data e automação.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Links</h4>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/consultoria.html" class="hover:text-brand-700">Consultoria</a></li>
+          <li><a href="/gestao.html" class="hover:text-brand-700">Gestão Mensal de Custos</a></li>
+          <li><a href="/quem-somos.html" class="hover:text-brand-700">Quem Somos</a></li>
+          <li><a href="/contato.html" class="hover:text-brand-700">Contato</a></li>
+          <li><a href="/politica-de-privacidade.html" class="hover:text-brand-700">Privacidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">Contato</h4>
+        <address class="mt-3 not-italic text-slate-600">
+          R. Prof. Pedro V. P. de Souza, 3901 - Cj. 59<br/>
+          Cidade Industrial - Curitiba/PR
+        </address>
+        <p class="mt-2"><a class="text-brand-700 hover:underline" href="tel:+5541992118038">+55 (41) 99211-8038</a></p>
+        <p><a class="text-brand-700 hover:underline" href="mailto:contato@moaitecnologia.com">contato@moaitecnologia.com</a></p>
+      </div>
+    </div>
+    <div class="border-t py-4 text-center text-xs text-slate-500">
+      © <span id="y"></span> moAI TECH. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script>
+    // Ano atual no footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Schema.org (ajuda SEO e rich results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "moAI TECH",
+    "url": "https://www.moaitecnologia.com/",
+    "logo": "https://www.moaitecnologia.com/assets/favicon.svg",
+    "description": "Consultoria em Telecom, Gestão de Custos, Big Data e Automação.",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+55-41-99211-8038",
+      "contactType": "customer service",
+      "areaServed": "BR",
+      "availableLanguage": ["pt-BR","en"]
+    }],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Prof. Pedro V. P. de Souza, 3901 - Cj. 59",
+      "addressLocality": "Curitiba",
+      "addressRegion": "PR",
+      "addressCountry": "BR"
+    }
+  }
+  </script>
+</body>
+</html>

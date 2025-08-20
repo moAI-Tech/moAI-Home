@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato — moAI TECH</title>
+  <meta name="description" content="Fale com a moAI TECH. Tire dúvidas, solicite diagnóstico ou peça uma proposta." />
+  <meta name="theme-color" content="#084375" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Arial','Noto Sans','sans-serif'] },
+          colors: {
+            brand: { 50:'#e6eef4',100:'#c3d6e6',200:'#a0bed8',300:'#7da6ca',400:'#5a8ebc',500:'#3776ae',600:'#21609a',700:'#084375',800:'#06345a',900:'#04253f' }
+          },
+          boxShadow: { soft:'0 10px 30px rgba(0,0,0,.08)' },
+          borderRadius: { '2xl': '1.25rem', xl2: '1rem' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background: radial-gradient(1200px 600px at 100% -50%, rgba(8,67,117,.08), transparent), radial-gradient(900px 500px at -20% 10%, rgba(8,67,117,.06), transparent); }
+    .card { box-shadow: 0 8px 28px rgba(8,67,117,.08); }
+    .focus-ring { outline: 2px solid transparent; outline-offset: 2px; box-shadow: 0 0 0 3px rgba(8,67,117,.35); }
+    .no-underline:hover { text-decoration: none; }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      const btn = document.getElementById('menuBtn');
+      const nav = document.getElementById('mnav');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('hidden');
+    }
+  </script>
+</head>
+<body class="bg-slate-50">
+  <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:bg-white focus:text-brand-700 focus:px-3 focus:py-2 focus:rounded-md focus-ring">Pular para o conteúdo</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 no-underline">
+        <img src="/assets/favicon.svg" alt="moAI TECH" class="h-8 w-6" loading="eager" decoding="async" />
+        <span class="font-semibold tracking-tight">moAI TECH</span>
+      </a>
+      <nav class="hidden md:flex gap-6 text-sm items-center">
+        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="/index.html">Home</a>
+        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="/consultoria.html">Consultoria</a>
+        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="/gestao.html">Gestão de Custos</a>
+        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="/quem-somos.html">Quem Somos</a>
+        <a class="inline-flex items-center rounded-xl bg-brand-700 px-4 py-2 text-white font-semibold transition-colors hover:bg-brand-800 shadow-soft" aria-current="page" href="/contato.html">Contato</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden inline-flex p-2 rounded-lg hover:bg-slate-100" aria-label="Menu" aria-controls="mnav" aria-expanded="false" onclick="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <nav id="mnav" class="md:hidden hidden border-t bg-white">
+      <div class="mx-auto max-w-7xl px-4 py-3 grid gap-3 text-sm">
+        <a class="hover:text-brand-700" href="/index.html">Home</a>
+        <a class="hover:text-brand-700" href="/consultoria.html">Consultoria</a>
+        <a class="hover:text-brand-700" href="/gestao.html">Gestão de Custos</a>
+        <a class="hover:text-brand-700" href="/quem-somos.html">Quem Somos</a>
+        <a class="hover:text-brand-700" aria-current="page" href="/contato.html">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- Hero -->
+    <section>
+      <div class="mx-auto max-w-7xl px-4 py-16">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-brand-800">Fale com a moAI TECH</h1>
+        <p class="mt-4 text-slate-600 max-w-prose">Preencha o formulário e retornaremos rapidamente. Se preferir, use <a class="text-brand-700 hover:underline" href="mailto:contato@moaitecnologia.com">contato@moaitecnologia.com</a> ou <a class="text-brand-700 hover:underline" href="tel:+5541992118038">+55 (41) 99211-8038</a>.</p>
+      </div>
+    </section>
+
+    <!-- Formulário -->
+    <section class="mx-auto max-w-7xl px-4 pb-16">
+      <div class="grid gap-10 md:grid-cols-3">
+        <div class="md:col-span-2">
+          <form id="contactForm" class="rounded-2xl border border-slate-100 bg-white p-6 card" novalidate>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="nome" class="block text-sm font-medium text-slate-700">Nome *</label>
+                <input id="nome" name="nome" type="text" required autocomplete="name"
+                  class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:ring-2
+                        focus:ring-brand-600 focus:outline-none" />
+                <p class="mt-1 text-xs text-red-600 hidden" id="nomeError">Informe seu nome.</p>
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-slate-700">E-mail *</label>
+                <input id="email" name="email" type="email" required autocomplete="email"
+                  class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:ring-2
+                        focus:ring-brand-600 focus:outline-none" />
+                <p class="mt-1 text-xs text-red-600 hidden" id="emailError">Informe um e-mail válido.</p>
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="empresa" class="block text-sm font-medium text-slate-700">Empresa</label>
+                <input id="empresa" name="empresa" type="text" autocomplete="organization"
+                  class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:ring-2
+                        focus:ring-brand-600 focus:outline-none" />
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="mensagem" class="block text-sm font-medium text-slate-700">Mensagem *</label>
+                <textarea id="mensagem" name="mensagem" rows="6" required
+                  class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:ring-2
+                        focus:ring-brand-600 focus:outline-none"></textarea>
+                <p class="mt-1 text-xs text-red-600 hidden" id="mensagemError">Escreva uma mensagem.</p>
+              </div>
+            </div>
+
+          <!-- Honeypot -->
+            <div class="hidden" aria-hidden="true">
+              <label>Não preencha este campo: <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+            </div>
+
+            <div class="mt-6 flex items-start gap-3">
+              <input id="lgpd" type="checkbox" class="mt-1 h-4 w-4 rounded border-slate-300 text-brand-700 focus:ring-brand-600" required />
+              <label for="lgpd" class="text-sm text-slate-700">Autorizo o uso dos meus dados para contato conforme a <a href="/politica-de-privacidade.html" class="text-brand-700 hover:underline">Política de Privacidade</a>. *</label>
+            </div>
+
+            <div class="mt-6 flex items-center gap-3">
+              <button type="submit" class="inline-flex items-center rounded-xl bg-brand-700 px-6 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Enviar mensagem</button>
+              <p id="formStatus" class="text-sm text-slate-600" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="md:col-span-1">
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+            <h2 class="font-semibold text-slate-900">Outros canais</h2>
+            <ul class="mt-3 text-sm text-slate-700 space-y-2">
+              <li><span class="text-slate-500">E-mail:</span> <a class="text-brand-700 hover:underline" href="mailto:contato@moaitecnologia.com">contato@moaitecnologia.com</a></li>
+              <li><span class="text-slate-500">Telefone:</span> <a class="text-brand-700 hover:underline" href="tel:+5541992118038">+55 (41) 99211-8038</a></li>
+              <li><span class="text-slate-500">Endereço:</span> R. Prof. Pedro V. P. de Souza, 3901 - Cj. 59<br/>Cidade Industrial - Curitiba/PR</li>
+            </ul>
+            <hr class="my-4 border-slate-200" />
+            <h3 class="font-semibold text-slate-900">Atendimento</h3>
+            <p class="mt-2 text-sm text-slate-700">Seg a Sex, 9h–18h (BRT)</p>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Sucesso -->
+      <div id="successCard" class="hidden mt-10 rounded-2xl border border-green-200 bg-green-50 p-6">
+        <p class="text-green-900 font-semibold">Mensagem enviada!</p>
+        <p class="text-sm text-green-800 mt-1">Recebemos seus dados e entraremos em contato em breve.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 border-t bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-10 grid gap-6 md:grid-cols-3 text-sm">
+      <div>
+        <div class="flex items-center gap-2">
+          <img src="/assets/favicon.svg" alt="moAI TECH" class="h-8 w-6" loading="lazy" />
+          <span class="font-semibold tracking-tight">moAI TECH</span>
+        </div>
+        <p class="mt-4 text-slate-600">Soluções em TI &amp; Telecom com foco em redução de custos, Big Data e automação.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Links</h4>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/consultoria.html" class="hover:text-brand-700">Consultoria</a></li>
+          <li><a href="/gestao.html" class="hover:text-brand-700">Gestão Mensal de Custos</a></li>
+          <li><a href="/quem-somos.html" class="hover:text-brand-700">Quem Somos</a></li>
+          <li><a href="/contato.html" aria-current="page" class="hover:text-brand-700">Contato</a></li>
+          <li><a href="/politica-de-privacidade.html" class="hover:text-brand-700">Privacidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">Contato</h4>
+        <address class="mt-3 not-italic text-slate-600">
+          R. Prof. Pedro V. P. de Souza, 3901 - Cj. 59<br/>
+          Cidade Industrial - Curitiba/PR
+        </address>
+        <p class="mt-2"><a class="text-brand-700 hover:underline" href="tel:+5541992118038">+55 (41) 99211-8038</a></p>
+        <p><a class="text-brand-700 hover:underline" href="mailto:contato@moaitecnologia.com">contato@moaitecnologia.com</a></p>
+      </div>
+    </div>
+    <div class="border-t py-4 text-center text-xs text-slate-500">© <span id="y"></span> moAI TECH. Todos os direitos reservados.</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    const successCard = document.getElementById('successCard');
+
+    function showError(id, cond, msgId){
+      const el = document.getElementById(id);
+      const err = document.getElementById(msgId);
+      if(cond){ err?.classList.add('hidden'); el.classList.remove('border-red-500'); }
+      else { err?.classList.remove('hidden'); el.classList.add('border-red-500'); }
+      return cond;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.textContent = '';
+
+      const okNome = showError('nome', !!form.nome.value.trim(), 'nomeError');
+      const okEmail = showError('email', /.+@.+\..+/.test(form.email.value), 'emailError');
+      const okMsg = showError('mensagem', !!form.mensagem.value.trim(), 'mensagemError');
+      const okLgpd = form.querySelector('#lgpd').checked;
+
+      if(!okLgpd){ status.textContent = 'Para enviar, aceite a Política de Privacidade.'; return; }
+      if(!(okNome && okEmail && okMsg)){ status.textContent = 'Verifique os campos destacados.'; return; }
+
+      if(form.website && form.website.value){ return; }
+
+      status.textContent = 'Enviando…';
+      await new Promise(r => setTimeout(r, 800));
+      status.textContent = '';
+      successCard.classList.remove('hidden');
+      form.reset();
+    });
+  </script>
+</body>
+</html>

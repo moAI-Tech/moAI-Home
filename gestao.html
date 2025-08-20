@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestão Mensal de Custos (TEM) — moAI TECH</title>
+  <meta name="description" content="Gestão contínua de custos em Telecom: conciliação mensal, KPIs, governança e melhoria contínua." />
+  <meta name="theme-color" content="#084375" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Arial','Noto Sans','sans-serif'] },
+          colors: { brand: {50:'#e6eef4',100:'#c3d6e6',200:'#a0bed8',300:'#7da6ca',400:'#5a8ebc',500:'#3776ae',600:'#21609a',700:'#084375',800:'#06345a',900:'#04253f'} },
+          boxShadow: { soft:'0 10px 30px rgba(0,0,0,.08)' },
+          borderRadius: { '2xl':'1.25rem' }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: radial-gradient(1050px 520px at -10% -20%, rgba(8,67,117,.05), transparent); }
+    .card { box-shadow: 0 8px 28px rgba(8,67,117,.08); }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 no-underline">
+        <img src="/assets/favicon.svg" alt="moAI TECH" class="h-8 w-6" loading="eager" decoding="async" />
+        <span class="font-semibold tracking-tight">moAI TECH</span>
+      </a>
+
+      <nav class="hidden md:flex gap-6 text-sm items-center">
+        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="/index.html">Home</a>
+        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="/consultoria.html">Consultoria</a>
+        <a class="px-2 font-semibold text-brand-700 transition-colors" aria-current="page" href="/gestao.html">Gestão de Custos</a>
+        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="/quem-somos.html">Quem Somos</a>
+        <a class="inline-flex items-center rounded-xl bg-brand-700 px-4 py-2 text-white font-semibold transition-colors hover:bg-brand-800 shadow-soft" href="/contato.html">Contato</a>
+      </nav>
+
+      <button id="menuBtn" class="md:hidden inline-flex p-2 rounded-lg hover:bg-slate-100" aria-label="Menu" aria-controls="mnav" aria-expanded="false" onclick="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <nav id="mnav" class="md:hidden hidden border-t bg-white">
+      <div class="mx-auto max-w-7xl px-4 py-3 grid gap-3 text-sm">
+        <a class="hover:text-brand-700" href="/index.html">Home</a>
+        <a class="hover:text-brand-700" href="/consultoria.html">Consultoria</a>
+        <a class="font-semibold text-brand-700" href="/gestao.html">Gestão de Custos</a>
+        <a class="hover:text-brand-700" href="/quem-somos.html">Quem Somos</a>
+        <a class="hover:text-brand-700" href="/contato.html">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="bg-gradient-to-b from-white to-brand-50/40">
+      <div class="mx-auto max-w-7xl px-4 py-16 grid gap-8 md:grid-cols-2 items-center">
+        <div>
+          <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-brand-800">Gestão Mensal de Custos (TEM)</h1>
+          <p class="mt-4 text-slate-600 max-w-prose">Conciliação recorrente de faturas, controle de inventário, políticas de uso, alertas, KPIs e relatórios executivos. Um ciclo PDCA contínuo para manter a economia ao longo do tempo.</p>
+          <div class="mt-6 flex gap-3">
+            <a href="#entregaveis" class="rounded-xl border border-brand-700 px-5 py-3 text-brand-700 font-semibold bg-white hover:bg-brand-50">Entregáveis</a>
+            <a href="/contato.html" class="rounded-xl bg-brand-700 px-5 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Começar agora</a>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
+            <div class="text-2xl font-extrabold text-brand-800">99,9%</div>
+            <div class="text-xs text-slate-600">SLA de fechamento mensal</div>
+          </div>
+          <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
+            <div class="text-2xl font-extrabold text-brand-800">D+5</div>
+            <div class="text-xs text-slate-600">prazo típico do report</div>
+          </div>
+          <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
+            <div class="text-2xl font-extrabold text-brand-800">Auditável</div>
+            <div class="text-xs text-slate-600">trilha e evidências</div>
+          </div>
+          <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
+            <div class="text-2xl font-extrabold text-brand-800">Dash Realtime</div>
+            <div class="text-xs text-slate-600">quando aplicável</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entregáveis -->
+    <section id="entregaveis" class="mx-auto max-w-7xl px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900">Entregáveis do TEM</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Conciliação mensal</h3>
+          <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li>Validação de tarifas, impostos e descontos</li>
+            <li>Detecção de cobranças indevidas</li>
+            <li>Contestação com evidências</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Inventário vivo</h3>
+          <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li>Linhas, SIMs, DIDs, devices</li>
+            <li>Movimentações e ownership</li>
+            <li>Integração com RH/AD (quando aplicável)</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Políticas & uso</h3>
+          <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li>Regras por perfil de usuário</li>
+            <li>Alertas e limites de consumo</li>
+            <li>Onboarding e treinamento</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">KPIs & dashboards</h3>
+          <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li>Gasto por centro de custo</li>
+            <li>Economia acumulada e recorrente</li>
+            <li>Uso x política por usuário</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Relatórios executivos</h3>
+          <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li>Resumo mensal com insights</li>
+            <li>Planos de ação (PDCA)</li>
+            <li>Roadmap trimestral</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Suporte & governança</h3>
+          <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li>SLAs claros e escalonamento</li>
+            <li>Canal de atendimento</li>
+            <li>Revisões de contrato com telcos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ciclo PDCA / Operação -->
+    <section class="bg-white/60 border-y border-slate-100">
+      <div class="mx-auto max-w-7xl px-4 py-16">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900">Como operamos (PDCA)</h2>
+        <div class="mt-8 grid gap-6 md:grid-cols-4 text-sm">
+          <div class="rounded-2xl p-6 bg-white border border-slate-100 card"><p class="text-xs uppercase tracking-wide text-brand-700">Plan</p><p class="mt-2 text-slate-700">Definição de KPIs e metas de economia; baseline e riscos.</p></div>
+          <div class="rounded-2xl p-6 bg-white border border-slate-100 card"><p class="text-xs uppercase tracking-wide text-brand-700">Do</p><p class="mt-2 text-slate-700">Conciliação, ajustes, automações, treinamentos e políticas.</p></div>
+          <div class="rounded-2xl p-6 bg-white border border-slate-100 card"><p class="text-xs uppercase tracking-wide text-brand-700">Check</p><p class="mt-2 text-slate-700">Relatórios mensais e auditorias amostrais.</p></div>
+          <div class="rounded-2xl p-6 bg-white border border-slate-100 card"><p class="text-xs uppercase tracking-wide text-brand-700">Act</p><p class="mt-2 text-slate-700">Planos de ação e renegociação contínua.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planos (exemplo) -->
+    <section class="mx-auto max-w-7xl px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900">Planos sugeridos</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 card">
+          <h3 class="font-semibold">Essencial</h3>
+          <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li>Conciliação e inventário</li>
+            <li>KPIs básicos</li>
+            <li>Relatório mensal</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-brand-200 bg-white p-6 card ring-1 ring-brand-200">
+          <h3 class="font-semibold">Profissional</h3>
+          <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li>+ Políticas e alertas</li>
+            <li>Dashboards interativos</li>
+            <li>Suporte estendido</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 card">
+          <h3 class="font-semibold">Enterprise</h3>
+          <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li>Integrações (RH/ERP)</li>
+            <li>Automação avançada</li>
+            <li>Relatórios executivos ampliados</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8">
+        <a href="/contato.html" class="inline-flex items-center rounded-xl bg-brand-700 px-6 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Solicitar proposta</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-8 text-xs text-slate-500 text-center">© <span id="y"></span> moAI TECH</div>
+  </footer>
+
+    <!-- Scripts -->
+  <script>
+    // Ano no footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Toggle do menu mobile (igual à home)
+    function toggleMenu() {
+      const mnav = document.getElementById('mnav');
+      const btn = document.getElementById('menuBtn');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      mnav.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!expanded));
+    }
+  </script>
+</body>
+</html>

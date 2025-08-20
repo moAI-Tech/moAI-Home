@@ -1,0 +1,9 @@
+[build]
+  command = ""
+  publish = "."
+
+# Optional: pretty URLs if you add a build step later
+# [[redirects]]
+#   from = "/*"
+#   to = "/:splat"
+#   status = 200
