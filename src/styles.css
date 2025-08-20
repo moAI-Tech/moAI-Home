@@ -1,3 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Seu tema (cores, fontes, sombras, raios etc.) */
+@theme {
+    /* fonte padrão do site (use .font-sans no <body>) */
+    --font-sans: Inter, ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+
+    /* paleta brand (gera text/bg/border/… brand-*) */
+    --color-brand-50: #e6eef4;
+    --color-brand-100: #c3d6e6;
+    --color-brand-200: #a0bed8;
+    --color-brand-300: #7da6ca;
+    --color-brand-400: #5a8ebc;
+    --color-brand-500: #3776ae;
+    --color-brand-600: #21609a;
+    --color-brand-700: #084375;
+    /* principal */
+    --color-brand-800: #06345a;
+    --color-brand-900: #04253f;
+
+    /* utilidades customizadas mapeadas por nome */
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, .08);
+    /* vira .shadow-soft */
+    --radius-2xl: 1.25rem;
+    /* vira .rounded-2xl */
+    --radius-xl2: 1rem;
+    /* vira .rounded-xl2 */
+}
