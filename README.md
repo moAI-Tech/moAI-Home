@@ -1,7 +1,7 @@
 
 # moAI TECH — HTML + Tailwind (CDN)
 
-Site institucional estático (Home / Consultoria / Gestão / Quem Somos / Contato) com **Tailwind via CDN**.
+Site institucional estático (Home / Consultoria / Gestão / Soluções / Contato) com **Tailwind via CDN**.
 Ideal para deploy no **Netlify** (arrastar e soltar a pasta ou conectar o repositório).
 
 ## Como publicar

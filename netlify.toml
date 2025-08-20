@@ -28,6 +28,6 @@
   status = 200
 
 [[redirects]]
-  from = "/quem-somos"
-  to = "/quem-somos.html"
+  from = "/solucoes"
+  to = "/solucoes.html"
   status = 200
