@@ -2,8 +2,32 @@
   command = ""
   publish = "."
 
-# Optional: pretty URLs if you add a build step later
-# [[redirects]]
-#   from = "/*"
-#   to = "/:splat"
-#   status = 200
+[[redirects]]
+  from = "/consultoria"
+  to = "/consultoria.html"
+  status = 200
+
+[[redirects]]
+  from = "/contato"
+  to = "/contato.html"
+  status = 200
+
+[[redirects]]
+  from = "/gestao"
+  to = "/gestao.html"
+  status = 200
+
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/politica-de-privacidade"
+  to = "/politica-de-privacidade.html"
+  status = 200
+
+[[redirects]]
+  from = "/quem-somos"
+  to = "/quem-somos.html"
+  status = 200
