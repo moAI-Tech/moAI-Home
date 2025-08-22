@@ -1,228 +1,376 @@
 <!doctype html>
 <html lang="pt-BR" class="scroll-smooth">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Soluções — moAI TECH</title>
-  <meta name="description" content="Open Gateway, Scoragem, Enriquecimento de dados, Soluções de TI e Desenvolvimento de Software focado em automação." />
-  <meta name="theme-color" content="#084375" />
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soluções — moAI TECH</title>
+    <meta
+      name="description"
+      content="Open Gateway, Scoragem, Enriquecimento de dados, Soluções de TI e Desenvolvimento de Software focado em automação."
+    />
+    <meta name="theme-color" content="#084375" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
 
-  <!-- Tailwind (seu bundle) -->
-  <link rel="stylesheet" href="./assets/styles.css">
+    <!-- Tailwind (seu bundle) -->
+    <link rel="stylesheet" href="./assets/styles.css" />
 
-  <style>
-    body { background: radial-gradient(1100px 520px at 100% -50%, rgba(8,67,117,.06), transparent); }
-    .card { box-shadow: 0 8px 28px rgba(8,67,117,.08); }
-  </style>
-</head>
-<body class="min-h-screen text-slate-800">
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
-    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-      <a href="./index.html" class="flex items-center gap-2 no-underline">
-        <img src="/assets/favicon.svg" alt="moAI TECH" class="h-8 w-6" loading="eager" decoding="async" />
-        <span class="font-semibold tracking-tight">moAI TECH</span>
-      </a>
+    <style>
+      body {
+        background: radial-gradient(
+          1100px 520px at 100% -50%,
+          rgba(8, 67, 117, 0.06),
+          transparent
+        );
+      }
+      .card {
+        box-shadow: 0 8px 28px rgba(8, 67, 117, 0.08);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen text-slate-800">
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100"
+    >
+      <div
+        class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between"
+      >
+        <a href="./index.html" class="flex items-center gap-2 no-underline">
+          <img
+            src="/assets/favicon.svg"
+            alt="moAI TECH"
+            class="h-8 w-6"
+            loading="eager"
+            decoding="async"
+          />
+          <span class="font-semibold tracking-tight">moAI TECH</span>
+        </a>
 
-      <nav class="hidden md:flex gap-6 text-sm items-center">
-        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="./index.html">Home</a>
-        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="./consultoria.html">Consultoria</a>
-        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="./gestao.html">Gestão de Custos</a>
-        <a class="px-2 font-semibold text-brand-700 transition-colors" aria-current="page" href="./solucoes.html">Soluções</a>
-        <a class="inline-flex items-center rounded-xl bg-brand-700 px-4 py-2 text-white font-semibold transition-colors hover:bg-brand-800 shadow-soft" href="./contato.html">Contato</a>
+        <nav class="hidden md:flex gap-6 text-sm items-center">
+          <a
+            class="px-2 font-medium transition-colors hover:text-brand-700"
+            href="./index.html"
+            >Home</a
+          >
+          <a
+            class="px-2 font-medium transition-colors hover:text-brand-700"
+            href="./consultoria.html"
+            >Consultoria</a
+          >
+          <a
+            class="px-2 font-medium transition-colors hover:text-brand-700"
+            href="./gestao.html"
+            >Gestão de Custos</a
+          >
+          <a
+            class="px-2 font-semibold text-brand-700 transition-colors"
+            aria-current="page"
+            href="./solucoes.html"
+            >Soluções</a
+          >
+          <a
+            class="inline-flex items-center rounded-xl bg-brand-700 px-4 py-2 text-white font-semibold transition-colors hover:bg-brand-800 shadow-soft"
+            href="./contato.html"
+            >Contato</a
+          >
+        </nav>
+
+        <button
+          id="menuBtn"
+          class="md:hidden inline-flex p-2 rounded-lg hover:bg-slate-100"
+          aria-label="Menu"
+          aria-controls="mnav"
+          aria-expanded="false"
+          onclick="toggleMenu()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+      <nav id="mnav" class="md:hidden hidden border-t bg-white">
+        <div class="mx-auto max-w-7xl px-4 py-3 grid gap-3 text-sm">
+          <a class="hover:text-brand-700" href="./index.html">Home</a>
+          <a class="hover:text-brand-700" href="./consultoria.html"
+            >Consultoria</a
+          >
+          <a class="hover:text-brand-700" href="./gestao.html"
+            >Gestão de Custos</a
+          >
+          <a
+            class="font-semibold text-brand-700"
+            aria-current="page"
+            href="./solucoes.html"
+            >Soluções</a
+          >
+          <a class="hover:text-brand-700" href="./contato.html">Contato</a>
+        </div>
       </nav>
+    </header>
 
-      <button id="menuBtn" class="md:hidden inline-flex p-2 rounded-lg hover:bg-slate-100" aria-label="Menu" aria-controls="mnav" aria-expanded="false" onclick="toggleMenu()">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-    </div>
-    <nav id="mnav" class="md:hidden hidden border-t bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-3 grid gap-3 text-sm">
-        <a class="hover:text-brand-700" href="./index.html">Home</a>
-        <a class="hover:text-brand-700" href="./consultoria.html">Consultoria</a>
-        <a class="hover:text-brand-700" href="./gestao.html">Gestão de Custos</a>
-        <a class="font-semibold text-brand-700" aria-current="page" href="./solucoes.html">Soluções</a>
-        <a class="hover:text-brand-700" href="./contato.html">Contato</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Hero -->
-    <section class="bg-gradient-to-b from-white to-brand-50/40">
-      <div class="mx-auto max-w-7xl px-4 py-16 grid gap-8 md:grid-cols-2 items-center">
-        <div>
-          <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-brand-800">
-            Soluções que conectam dados, automação e resultado
-          </h1>
-          <p class="mt-4 text-slate-600 max-w-prose">
-            Da validação de telefones via Open Gateway ao enriquecimento e score de bases, passando por TI, infraestrutura e desenvolvimento sob medida.
-          </p>
-          <div class="mt-6 flex gap-3">
-            <a href="#catalogo" class="rounded-xl border border-brand-700 px-5 py-3 text-brand-700 font-semibold bg-white hover:bg-brand-50">Ver catálogo</a>
-            <a href="./contato.html" class="rounded-xl bg-brand-700 px-5 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Fale com a gente</a>
-          </div>
-        </div>
-
-        <!-- Métricas -->
-        <div class="grid grid-cols-2 gap-4">
-          <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
-            <div class="text-2xl font-extrabold text-brand-800">76M+</div>
-            <div class="text-xs text-slate-600">números únicos escorados</div>
-          </div>
-          <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
-            <div class="text-2xl font-extrabold text-brand-800">Real-time</div>
-            <div class="text-xs text-slate-600">validação via Open Gateway</div>
-          </div>
-          <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
-            <div class="text-2xl font-extrabold text-brand-800">Data-Ready</div>
-            <div class="text-xs text-slate-600">enriquecimento com filtragem</div>
-          </div>
-          <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
-            <div class="text-2xl font-extrabold text-brand-800">1,5 Bi+</div>
-            <div class="text-xs text-slate-600">chamadas registradas por mês</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Catálogo -->
-    <section id="catalogo" class="mx-auto max-w-7xl px-4 py-16">
-      <header class="mb-8">
-        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900">Catálogo de Soluções</h2>
-        <p class="mt-2 text-slate-600">Componentes modulares que podem operar de forma independente ou integrada.</p>
-      </header>
-
-      <!-- Linha 1: Open Gateway / Scoragem / Enriquecimento -->
-      <div class="grid gap-6 md:grid-cols-3">
-        <!-- Open Gateway -->
-        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
-          <h3 class="font-semibold text-slate-900">Open Gateway</h3>
-          <p class="mt-2 text-sm text-slate-600">
-            Validação de titularidade: verifica se o <strong>telefone está associado ao CPF</strong> informado.
-            Ideal para onboarding, antifraude e confirmação de contato.
-          </p>
-          <ul class="mt-4 text-sm text-slate-600 list-disc pl-5 space-y-1">
-            <li>Consulta em tempo real (low latency)</li>
-            <li>Logs de auditoria e SLA</li>
-            <li>API REST segura (OAuth/JWT)</li>
-          </ul>
-          <a href="./contato.html" class="mt-5 inline-flex rounded-xl border border-brand-700 px-4 py-2 text-brand-700 font-semibold hover:bg-brand-50">Quero integrar</a>
-        </div>
-
-        <!-- Scoragem -->
-        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
-          <h3 class="font-semibold text-slate-900">Scoragem</h3>
-          <p class="mt-2 text-sm text-slate-600">
-            Motor de <strong>score de telefones</strong> com base comportamental e operacional.
-            Já são <strong>76+ milhões</strong> de números únicos escorados.
-          </p>
-          <ul class="mt-4 text-sm text-slate-600 list-disc pl-5 space-y-1">
-            <li>Modelos por segmento e caso de uso</li>
-            <li>KPIs de qualidade e risco</li>
-            <li>Exportação em lote e via API</li>
-          </ul>
-          <a href="./contato.html" class="mt-5 inline-flex rounded-xl border border-brand-700 px-4 py-2 text-brand-700 font-semibold hover:bg-brand-50">Conhecer planos</a>
-        </div>
-
-        <!-- Enriquecimento -->
-        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
-          <h3 class="font-semibold text-slate-900">Enriquecimento de Dados</h3>
-          <p class="mt-2 text-sm text-slate-600">
-            Enriqueça sua base com atributos e <strong>filtragem/ordenação de telefones por score</strong>.
-            Melhore contato, priorização e conversão.
-          </p>
-          <ul class="mt-4 text-sm text-slate-600 list-disc pl-5 space-y-1">
-            <li>Batch (arquivos) e streaming</li>
-            <li>Regras de deduplicação e opt‑out</li>
-            <li>Data quality e relatórios executivos</li>
-          </ul>
-          <a href="./contato.html" class="mt-5 inline-flex rounded-xl border border-brand-700 px-4 py-2 text-brand-700 font-semibold hover:bg-brand-50">Solicitar amostra</a>
-        </div>
-      </div>
-
-      <!-- Linha 2: Soluções de TI -->
-      <div class="mt-10 rounded-2xl border border-slate-100 bg-white p-6 card">
-        <div class="flex items-start justify-between gap-4 flex-wrap">
+    <main>
+      <!-- Hero -->
+      <section class="bg-gradient-to-b from-white to-brand-50/40">
+        <div
+          class="mx-auto max-w-7xl px-4 py-16 grid gap-8 md:grid-cols-2 items-center"
+        >
           <div>
-            <h3 class="font-semibold text-slate-900">Soluções de TI</h3>
-            <p class="mt-2 text-sm text-slate-600 max-w-prose">
-              Arquitetura, operação e automação ponta a ponta para comunicação e infraestrutura.
-              Nossa base processa e analisa mais de <strong>1,5 bilhão de chamadas por mês</strong>, garantindo confiabilidade em escala.
+            <h1
+              class="text-3xl md:text-5xl font-extrabold tracking-tight text-brand-800"
+            >
+              Soluções que conectam dados, automação e resultado
+            </h1>
+            <p class="mt-4 text-slate-600 max-w-prose">
+              Da validação de telefones via Open Gateway ao enriquecimento e
+              score de bases, passando por TI, infraestrutura e desenvolvimento
+              sob medida.
             </p>
+            <div class="mt-6 flex gap-3">
+              <a
+                href="#catalogo"
+                class="rounded-xl border border-brand-700 px-5 py-3 text-brand-700 font-semibold bg-white hover:bg-brand-50"
+                >Ver catálogo</a
+              >
+              <a
+                href="./contato.html"
+                class="rounded-xl bg-brand-700 px-5 py-3 text-white font-semibold shadow-soft hover:bg-brand-800"
+                >Fale com a gente</a
+              >
+            </div>
           </div>
-          <a href="./contato.html" class="inline-flex rounded-xl bg-brand-700 px-4 py-2 text-white font-semibold hover:bg-brand-800">Montar pacote</a>
-        </div>
-        <div class="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-sm text-slate-700">
-          <ul class="list-disc pl-5 space-y-1">
-            <li><strong>URAs e Agentes Virtuais</strong> (com e sem IA)</li>
-            <li><strong>SBCs inteligentes</strong> para chamadas — centralize e gerencie melhor seus contatos</li>
-            <li>Servidores & Data Center em Cloud</li>
-          </ul>
-          <ul class="list-disc pl-5 space-y-1">
-            <li>Segurança da Informação e Infraestrutura</li>
-            <li>Outsourcing de TI e Telecom</li>
-            <li>Observabilidade e monitoramento</li>
-          </ul>
-          <ul class="list-disc pl-5 space-y-1">
-            <li>Integrações e APIs</li>
-            <li>Governança e compliance</li>
-            <li>Dashboards executivos</li>
-          </ul>
-        </div>
-      </div>
 
-      <!-- Linha 3: Desenvolvimento de Software -->
-      <div class="mt-6 rounded-2xl border border-slate-100 bg-white p-6 card">
-        <div class="flex items-start justify-between gap-4 flex-wrap">
-          <div>
-            <h3 class="font-semibold text-slate-900">Desenvolvimento de Software</h3>
-            <p class="mt-2 text-sm text-slate-600 max-w-prose">
-              Foco em <strong>AUTOMAÇÃO</strong> e <strong>SOLUÇÕES DE SOFTWARE</strong> para acelerar processos e reduzir custos.
+          <!-- Métricas -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
+              <div class="text-2xl font-extrabold text-brand-800">76M+</div>
+              <div class="text-xs text-slate-600">números únicos escorados</div>
+            </div>
+            <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
+              <div class="text-2xl font-extrabold text-brand-800"
+                >Real-time</div
+              >
+              <div class="text-xs text-slate-600"
+                >validação via Open Gateway</div
+              >
+            </div>
+            <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
+              <div class="text-2xl font-extrabold text-brand-800"
+                >Data-Ready</div
+              >
+              <div class="text-xs text-slate-600"
+                >enriquecimento com filtragem</div
+              >
+            </div>
+            <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
+              <div class="text-2xl font-extrabold text-brand-800">1,5 Bi+</div>
+              <div class="text-xs text-slate-600"
+                >chamadas registradas por mês</div
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Catálogo -->
+      <section id="catalogo" class="mx-auto max-w-7xl px-4 py-16">
+        <header class="mb-8">
+          <h2
+            class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900"
+            >Catálogo de Soluções</h2
+          >
+          <p class="mt-2 text-slate-600"
+            >Componentes modulares que podem operar de forma independente ou
+            integrada.</p
+          >
+        </header>
+
+        <!-- Linha 1: Open Gateway / Scoragem / Enriquecimento -->
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- Open Gateway -->
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+            <h3 class="font-semibold text-slate-900">Open Gateway</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Validação de titularidade: verifica se o
+              <strong>telefone está associado ao CPF</strong> informado. Ideal
+              para onboarding, antifraude e confirmação de contato.
             </p>
+            <ul class="mt-4 text-sm text-slate-600 list-disc pl-5 space-y-1">
+              <li>Consulta em tempo real (low latency)</li>
+              <li>Logs de auditoria e SLA</li>
+              <li>API REST segura (OAuth/JWT)</li>
+            </ul>
+            <a
+              href="./contato.html"
+              class="mt-5 inline-flex rounded-xl border border-brand-700 px-4 py-2 text-brand-700 font-semibold hover:bg-brand-50"
+              >Quero integrar</a
+            >
           </div>
-          <a href="./contato.html" class="inline-flex rounded-xl bg-brand-700 px-4 py-2 text-white font-semibold hover:bg-brand-800">Discutir projeto</a>
+
+          <!-- Scoragem -->
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+            <h3 class="font-semibold text-slate-900">Scoragem</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Motor de <strong>score de telefones</strong> com base
+              comportamental e operacional. Já são
+              <strong>76+ milhões</strong> de números únicos escorados.
+            </p>
+            <ul class="mt-4 text-sm text-slate-600 list-disc pl-5 space-y-1">
+              <li>Modelos por segmento e caso de uso</li>
+              <li>KPIs de qualidade e risco</li>
+              <li>Exportação em lote e via API</li>
+            </ul>
+            <a
+              href="./contato.html"
+              class="mt-5 inline-flex rounded-xl border border-brand-700 px-4 py-2 text-brand-700 font-semibold hover:bg-brand-50"
+              >Conhecer planos</a
+            >
+          </div>
+
+          <!-- Enriquecimento -->
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+            <h3 class="font-semibold text-slate-900"
+              >Enriquecimento de Dados</h3
+            >
+            <p class="mt-2 text-sm text-slate-600">
+              Enriqueça sua base com atributos e
+              <strong>filtragem/ordenação de telefones por score</strong>.
+              Melhore contato, priorização e conversão.
+            </p>
+            <ul class="mt-4 text-sm text-slate-600 list-disc pl-5 space-y-1">
+              <li>Batch (arquivos) e streaming</li>
+              <li>Regras de deduplicação e opt‑out</li>
+              <li>Data quality e relatórios executivos</li>
+            </ul>
+            <a
+              href="./contato.html"
+              class="mt-5 inline-flex rounded-xl border border-brand-700 px-4 py-2 text-brand-700 font-semibold hover:bg-brand-50"
+              >Solicitar amostra</a
+            >
+          </div>
         </div>
-        <div class="mt-4 grid gap-4 md:grid-cols-3 text-sm text-slate-700">
-          <ul class="list-disc pl-5 space-y-1">
-            <li>Backends (APIs, ETL/ELT, filas)</li>
-            <li>Processos robóticos (RPA) e orquestração</li>
-          </ul>
-          <ul class="list-disc pl-5 space-y-1">
-            <li>Dashboards e portais internos</li>
-            <li>Integração com telefonia e CRMs</li>
-          </ul>
-          <ul class="list-disc pl-5 space-y-1">
-            <li>Qualidade de dados e governança</li>
-            <li>DevSecOps e entrega contínua</li>
-          </ul>
+
+        <!-- Linha 2: Soluções de TI -->
+        <div
+          class="mt-10 rounded-2xl border border-slate-100 bg-white p-6 card"
+        >
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <h3 class="font-semibold text-slate-900"
+                >Soluções de TI e Telecom</h3
+              >
+              <p class="mt-2 text-sm text-slate-600 max-w-prose">
+                Arquitetura, operação e automação ponta a ponta para comunicação
+                e infraestrutura. Nossa base processa e analisa mais de
+                <strong>1,5 bilhão de chamadas por mês</strong>, garantindo
+                confiabilidade em escala.
+              </p>
+            </div>
+            <a
+              href="./contato.html"
+              class="inline-flex rounded-xl bg-brand-700 px-4 py-2 text-white font-semibold hover:bg-brand-800"
+              >Montar pacote</a
+            >
+          </div>
+          <div
+            class="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-sm text-slate-700"
+          >
+            <ul class="list-disc pl-5 space-y-1">
+              <li><strong>URAs e Agentes Virtuais</strong> (com e sem IA)</li>
+              <li
+                ><strong>SBCs inteligentes</strong> para chamadas — centralize e
+                gerencie melhor seus contatos</li
+              >
+              <li>Servidores & Data Center em Cloud</li>
+            </ul>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Segurança da Informação e Infraestrutura</li>
+              <li>Outsourcing de TI e Telecom</li>
+              <li>Observabilidade e monitoramento</li>
+            </ul>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Integrações e APIs</li>
+              <li>Governança e compliance</li>
+              <li>Dashboards executivos</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <div class="mt-10">
-        <a href="./contato.html" class="inline-flex items-center rounded-xl bg-brand-700 px-6 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Quero uma proposta</a>
-      </div>
-    </section>
-  </main>
+        <!-- Linha 3: Desenvolvimento de Software -->
+        <div class="mt-6 rounded-2xl border border-slate-100 bg-white p-6 card">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <h3 class="font-semibold text-slate-900"
+                >Desenvolvimento de Software</h3
+              >
+              <p class="mt-2 text-sm text-slate-600 max-w-prose">
+                Foco em <strong>AUTOMAÇÃO</strong> e
+                <strong>SOLUÇÕES DE SOFTWARE</strong> para acelerar processos e
+                reduzir custos.
+              </p>
+            </div>
+            <a
+              href="./contato.html"
+              class="inline-flex rounded-xl bg-brand-700 px-4 py-2 text-white font-semibold hover:bg-brand-800"
+              >Discutir projeto</a
+            >
+          </div>
+          <div class="mt-4 grid gap-4 md:grid-cols-3 text-sm text-slate-700">
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Backends (APIs, ETL/ELT, filas)</li>
+              <li>Processos robóticos (RPA) e orquestração</li>
+            </ul>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Dashboards e portais internos</li>
+              <li>Integração com telefonia e CRMs</li>
+            </ul>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Qualidade de dados e governança</li>
+              <li>DevSecOps e entrega contínua</li>
+            </ul>
+          </div>
+        </div>
 
-  <footer class="border-t bg-white">
-    <div class="mx-auto max-w-7xl px-4 py-8 text-xs text-slate-500 text-center">© <span id="y"></span> moAI TECH</div>
-  </footer>
+        <div class="mt-10">
+          <a
+            href="./contato.html"
+            class="inline-flex items-center rounded-xl bg-brand-700 px-6 py-3 text-white font-semibold shadow-soft hover:bg-brand-800"
+            >Quero uma proposta</a
+          >
+        </div>
+      </section>
+    </main>
 
-  <!-- Scripts -->
-  <script>
-    // Ano no footer
-    document.getElementById('y').textContent = new Date().getFullYear();
+    <footer class="border-t bg-white">
+      <div
+        class="mx-auto max-w-7xl px-4 py-8 text-xs text-slate-500 text-center"
+        >© <span id="y"></span> moAI TECH</div
+      >
+    </footer>
 
-    // Toggle do menu mobile (igual às demais páginas)
-    function toggleMenu() {
-      const mnav = document.getElementById('mnav');
-      const btn = document.getElementById('menuBtn');
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      mnav.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', String(!expanded));
-    }
-  </script>
-</body>
+    <!-- Scripts -->
+    <script>
+      // Ano no footer
+      document.getElementById('y').textContent = new Date().getFullYear();
+
+      // Toggle do menu mobile (igual às demais páginas)
+      function toggleMenu() {
+        const mnav = document.getElementById('mnav');
+        const btn = document.getElementById('menuBtn');
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        mnav.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', String(!expanded));
+      }
+    </script>
+  </body>
 </html>
