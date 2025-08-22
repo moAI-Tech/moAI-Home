@@ -4,10 +4,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="canonical" href="https://moaitecnologia.com/contato" />
+  <meta property="og:url" content="https://moaitecnologia.com/contato" />
+  <meta property="og:title" content="Contato — moAI TECH" />
+  <meta property="og:description"
+    content="Fale com a moAI TECH. Tire dúvidas, solicite diagnóstico ou peça uma proposta." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://moaitecnologia.com/assets/og-cover.png" />
+  <meta property="og:site_name" content="moAI TECH" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <title>Contato — moAI TECH</title>
   <meta name="description" content="Fale com a moAI TECH. Tire dúvidas, solicite diagnóstico ou peça uma proposta." />
   <meta name="theme-color" content="#084375" />
+
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./assets/favicon.svg" />
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,37 +28,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Tailwind -->
-  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="./assets/styles.css" />
 
   <style>
     body {
-      background: radial-gradient(1200px 600px at 100% -50%, rgba(8, 67, 117, .08), transparent), radial-gradient(900px 500px at -20% 10%, rgba(8, 67, 117, .06), transparent);
+      background: radial-gradient(1200px 600px at 100% -50%, rgba(8, 67, 117, .08), transparent), radial-gradient(900px 500px at -20% 10%, rgba(8, 67, 117, .06), transparent)
     }
 
     .card {
-      box-shadow: 0 8px 28px rgba(8, 67, 117, .08);
+      box-shadow: 0 8px 28px rgba(8, 67, 117, .08)
     }
 
     .focus-ring {
       outline: 2px solid transparent;
       outline-offset: 2px;
-      box-shadow: 0 0 0 3px rgba(8, 67, 117, .35);
+      box-shadow: 0 0 0 3px rgba(8, 67, 117, .35)
     }
 
     .no-underline:hover {
-      text-decoration: none;
+      text-decoration: none
     }
   </style>
-
-  <script>
-    function toggleMenu() {
-      const btn = document.getElementById('menuBtn');
-      const nav = document.getElementById('mnav');
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !expanded);
-      nav.classList.toggle('hidden');
-    }
-  </script>
 </head>
 
 <body class="bg-slate-50">
@@ -221,6 +224,11 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    function toggleMenu() { const b = document.getElementById('menuBtn'); const n = document.getElementById('mnav'); const e = b.getAttribute('aria-expanded') === 'true'; b.setAttribute('aria-expanded', !e); n.classList.toggle('hidden') }
+  </script>
+
+  <script>
     const form = document.getElementById('contactForm');
     const status = document.getElementById('formStatus');
     const successCard = document.getElementById('successCard');
