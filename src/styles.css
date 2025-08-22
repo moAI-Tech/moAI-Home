@@ -1,3 +1,4 @@
+@config "../tailwind.config.js";
 @import "tailwindcss";
 
 /* Seu tema (cores, fontes, sombras, raios etc.) */
