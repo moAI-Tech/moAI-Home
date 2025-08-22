@@ -1,366 +1,442 @@
 <!doctype html>
 <html lang="pt-BR" class="scroll-smooth">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Consultoria em Telecom — moAI TECH</title>
-    <meta
-      name="description"
-      content="Consultoria em Telecom para mapear, otimizar e reduzir custos. Modelo WIN‑WIN opcional, com pagamento atrelado à economia comprovada."
-    />
-    <meta name="theme-color" content="#084375" />
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
 
-    <!-- Tailwind (seu bundle) -->
-    <link rel="stylesheet" href="./assets/styles.css" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <style>
-      body {
-        background: radial-gradient(
-          1100px 520px at 100% -50%,
+  <!-- Canonical -->
+  <link rel="canonical" href="https://moaitecnologia.com/consultoria" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Consultoria em Telecom — moAI TECH" />
+  <meta property="og:description"
+    content="Consultoria em Telecom para mapear, otimizar e reduzir custos. Modelo WIN-WIN opcional, com pagamento atrelado à economia comprovada." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://moaitecnologia.com/consultoria" />
+  <meta property="og:image" content="https://moaitecnologia.com/assets/og-cover.png" />
+  <meta property="og:site_name" content="moAI TECH" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Título e descrição -->
+  <title>Consultoria em Telecom — moAI TECH</title>
+  <meta name="description"
+    content="Consultoria em Telecom para mapear, otimizar e reduzir custos. Modelo WIN-WIN opcional, com pagamento atrelado à economia comprovada." />
+  <meta name="theme-color" content="#084375" />
+
+  <!-- Icones -->
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./assets/favicon.svg" />
+
+  <!-- Fontes (se usar Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (bundle compilado) -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+
+  <!-- Estilos específicos da página -->
+  <style>
+    body {
+      background: radial-gradient(1100px 520px at 100% -50%,
           rgba(8, 67, 117, 0.06),
-          transparent
-        );
-      }
-      .card {
-        box-shadow: 0 8px 28px rgba(8, 67, 117, 0.08);
-      }
+          transparent);
+    }
 
-      /* ===== Timeline: linha central com pseudo-elemento ===== */
-      .timeline{ position: relative; }
-      .timeline::before{
-        content:"";
-        position:absolute;
-        left:50%;
-        top:0;
-        bottom:0;
-        width:2px;                 /* espessura */
-        background:#e2e8f0;        /* slate-200 */
-        transform-origin: top;
-        transform: scaleY(0);
-        animation: timelineGrow .7s ease-out forwards;
+    .card {
+      box-shadow: 0 8px 28px rgba(8, 67, 117, 0.08);
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #e2e8f0;
+      transform-origin: top;
+      transform: scaleY(0);
+      animation: timelineGrow .7s ease-out forwards;
+    }
+
+    @keyframes timelineGrow {
+      to {
+        transform: scaleY(1);
       }
-      @keyframes timelineGrow { to { transform: scaleY(1); } }
+    }
 
-      /* Respeita “reduzir animações” do SO */
-      @media (prefers-reduced-motion: reduce) {
-        .timeline::before { animation: none; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .timeline::before {
+        animation: none;
+        transform: none;
       }
-    </style>
-  </head>
-  <body class="min-h-screen text-slate-800">
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
-      <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-        <a href="./index.html" class="flex items-center gap-2 no-underline">
-          <img src="/assets/favicon.svg" alt="moAI TECH" class="h-8 w-6" loading="eager" decoding="async" />
-          <span class="font-semibold tracking-tight">moAI TECH</span>
-        </a>
+    }
+  </style>
+</head>
 
-        <nav class="hidden md:flex gap-6 text-sm items-center">
-          <a class="px-2 font-medium transition-colors hover:text-brand-700" href="./index.html">Home</a>
-          <a class="px-2 font-semibold text-brand-700 transition-colors" aria-current="page" href="./consultoria.html">Consultoria</a>
-          <a class="px-2 font-medium transition-colors hover:text-brand-700" href="./gestao.html">Gestão de Custos</a>
-          <a class="px-2 font-medium transition-colors hover:text-brand-700" href="./solucoes.html">Soluções</a>
-          <a class="inline-flex items-center rounded-xl bg-brand-700 px-4 py-2 text-white font-semibold transition-colors hover:bg-brand-800 shadow-soft" href="./contato.html">Contato</a>
-        </nav>
 
-        <button id="menuBtn" class="md:hidden inline-flex p-2 rounded-lg hover:bg-slate-100" aria-label="Menu" aria-controls="mnav" aria-expanded="false" onclick="toggleMenu()">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
-      <nav id="mnav" class="md:hidden hidden border-t bg-white">
-        <div class="mx-auto max-w-7xl px-4 py-3 grid gap-3 text-sm">
-          <a class="hover:text-brand-700" href="./index.html">Home</a>
-          <a class="font-semibold text-brand-700" aria-current="page" href="./consultoria.html">Consultoria</a>
-          <a class="hover:text-brand-700" href="./gestao.html">Gestão de Custos</a>
-          <a class="hover:text-brand-700" href="./solucoes.html">Soluções</a>
-          <a class="hover:text-brand-700" href="./contato.html">Contato</a>
-        </div>
+<body class="min-h-screen text-slate-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-2 no-underline">
+        <img src="./assets/favicon.svg" alt="moAI TECH" class="h-8 w-6" loading="eager" decoding="async" />
+        <span class="font-semibold tracking-tight">moAI TECH</span>
+      </a>
+
+      <nav class="hidden md:flex gap-6 text-sm items-center">
+        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="./index.html">Home</a>
+        <a class="px-2 font-semibold text-brand-700 transition-colors" aria-current="page"
+          href="./consultoria.html">Consultoria</a>
+        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="./gestao.html">Gestão de Custos</a>
+        <a class="px-2 font-medium transition-colors hover:text-brand-700" href="./solucoes.html">Soluções</a>
+        <a class="inline-flex items-center rounded-xl bg-brand-700 px-4 py-2 text-white font-semibold transition-colors hover:bg-brand-800 shadow-soft"
+          href="./contato.html">Contato</a>
       </nav>
-    </header>
 
-    <main>
-      <!-- Hero: proposta clara + prova social -->
-      <section class="bg-gradient-to-b from-white to-brand-50/40">
-        <div class="mx-auto max-w-7xl px-4 py-16 grid gap-8 md:grid-cols-2 items-center">
-          <div>
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-brand-800">
-              Consultoria em Telecom para
-              <span class="text-brand-700">reduzir custos</span> e
-              <span class="text-brand-700">simplificar operações</span>
-            </h1>
-            <p class="mt-4 text-slate-600 max-w-prose">
-              Mapeamos sua estrutura de Telecom, identificamos <strong>oportunidades de otimização</strong> e conduzimos
-              <strong>renegociações com operadoras</strong>. Resultados típicos entre <strong>30% e 40%</strong> de economia — com casos de até
-              <strong>80%</strong>.
-            </p>
-            <div class="mt-6 flex gap-3 flex-wrap">
-              <a href="./contato.html" class="rounded-xl bg-brand-700 px-5 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Agendar diagnóstico gratuito</a>
-              <a href="#como-funciona" class="rounded-xl border border-brand-700 px-5 py-3 text-brand-700 font-semibold bg-white hover:bg-brand-50">Como funciona</a>
-            </div>
-            <p class="mt-3 text-xs text-slate-500">* Diagnóstico inicial sem custo e sem vínculo.</p>
-          </div>
+      <button id="menuBtn" class="md:hidden inline-flex p-2 rounded-lg hover:bg-slate-100" aria-label="Menu"
+        aria-controls="mnav" aria-expanded="false" onclick="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <nav id="mnav" class="md:hidden hidden border-t bg-white">
+      <div class="mx-auto max-w-7xl px-4 py-3 grid gap-3 text-sm">
+        <a class="hover:text-brand-700" href="./index.html">Home</a>
+        <a class="font-semibold text-brand-700" aria-current="page" href="./consultoria.html">Consultoria</a>
+        <a class="hover:text-brand-700" href="./gestao.html">Gestão de Custos</a>
+        <a class="hover:text-brand-700" href="./solucoes.html">Soluções</a>
+        <a class="hover:text-brand-700" href="./contato.html">Contato</a>
+      </div>
+    </nav>
+  </header>
 
-          <!-- KPIs/Provas -->
-          <div class="grid grid-cols-2 gap-4">
-            <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
-              <div class="text-2xl font-extrabold text-brand-800">30–40%</div>
-              <div class="text-xs text-slate-600">média de redução de custos</div>
-            </div>
-            <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
-              <div class="text-2xl font-extrabold text-brand-800">WIN‑WIN</div>
-              <div class="text-xs text-slate-600">opção de success fee</div>
-            </div>
-            <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
-              <div class="text-2xl font-extrabold text-brand-800">90 dias</div>
-              <div class="text-xs text-slate-600">payback típico</div>
-            </div>
-            <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
-              <div class="text-2xl font-extrabold text-brand-800">100%</div>
-              <div class="text-xs text-slate-600">transparência e relatórios</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- O que está incluso (frentes de atuação) -->
-      <section class="mx-auto max-w-7xl px-4 py-16">
-        <header class="mb-8">
-          <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900">O que fazemos na prática</h2>
-          <p class="mt-2 text-slate-600 max-w-prose">
-            Atuamos ponta a ponta: do <strong>levantamento gratuito</strong> à <strong>negociação</strong> e à
-            <strong>medição dos resultados</strong>, sempre alinhados ao seu objetivo.
+  <main>
+    <!-- Hero: proposta clara + prova social -->
+    <section class="bg-gradient-to-b from-white to-brand-50/40">
+      <div class="mx-auto max-w-7xl px-4 py-16 grid gap-8 md:grid-cols-2 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-brand-800">
+            Consultoria em Telecom para
+            <span class="text-brand-700">reduzir custos</span> e
+            <span class="text-brand-700">simplificar operações</span>
+          </h1>
+          <p class="mt-4 text-slate-600 max-w-prose">
+            Mapeamos sua estrutura de Telecom, identificamos <strong>oportunidades de otimização</strong> e conduzimos
+            <strong>renegociações com operadoras</strong>. Resultados típicos entre <strong>30% e 40%</strong> de
+            economia — com casos de até
+            <strong>80%</strong>.
           </p>
-        </header>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
-            <h3 class="font-semibold text-slate-900">Levantamento & Diagnóstico</h3>
-            <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
-              <li><strong>Levantamento gratuito</strong> dos serviços contratados</li>
-              <li>Análise de contratos e faturas</li>
-              <li>Benchmarking e inventário (linhas, DIDs, dados)</li>
-            </ul>
+          <div class="mt-6 flex gap-3 flex-wrap">
+            <a href="./contato.html"
+              class="rounded-xl bg-brand-700 px-5 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Agendar
+              diagnóstico gratuito</a>
+            <a href="#como-funciona"
+              class="rounded-xl border border-brand-700 px-5 py-3 text-brand-700 font-semibold bg-white hover:bg-brand-50">Como
+              funciona</a>
           </div>
-          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
-            <h3 class="font-semibold text-slate-900">Plano & ROI</h3>
-            <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
-              <li>Simulação de cenários e projeção de <strong>economia/ROI</strong></li>
-              <li>Estratégia de negociação e <strong>RFP</strong></li>
-              <li>Políticas de uso e quick wins</li>
-            </ul>
+          <p class="mt-3 text-xs text-slate-500">* Diagnóstico inicial sem custo e sem vínculo.</p>
+        </div>
+
+        <!-- KPIs/Provas -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
+            <div class="text-2xl font-extrabold text-brand-800">30–40%</div>
+            <div class="text-xs text-slate-600">média de redução de custos</div>
           </div>
-          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
-            <h3 class="font-semibold text-slate-900">Negociação & Fechamento</h3>
-            <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
-              <li>Consulta ao mercado e <strong>negociações com operadoras</strong></li>
-              <li>Apoio no contrato: cláusulas e <strong>SLAs</strong></li>
-              <li>Governança e compliance</li>
-            </ul>
+          <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
+            <div class="text-2xl font-extrabold text-brand-800">WIN‑WIN</div>
+            <div class="text-xs text-slate-600">opção de success fee</div>
           </div>
-          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
-            <h3 class="font-semibold text-slate-900">Implantação & Acompanhamento</h3>
-            <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
-              <li>Execução técnica das mudanças</li>
-              <li>Indicadores e <strong>dashboards executivos</strong></li>
-              <li><strong>Medição dos resultados</strong> e PDCA</li>
-            </ul>
+          <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
+            <div class="text-2xl font-extrabold text-brand-800">90 dias</div>
+            <div class="text-xs text-slate-600">payback típico</div>
           </div>
-          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
-            <h3 class="font-semibold text-slate-900">Independência Total</h3>
-            <p class="mt-3 text-sm text-slate-600">
-              Não somos associados a nenhuma operadora. Indicamos apenas o que <strong>melhor atende</strong> em preço e qualidade para o seu caso.
-            </p>
-          </div>
-          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
-            <h3 class="font-semibold text-slate-900">Modelo WIN‑WIN (opcional)</h3>
-            <p class="mt-3 text-sm text-slate-600">
-              Se preferir, trabalhamos por <strong>success fee</strong>: você só paga após a <strong>comprovação da economia</strong>.
-            </p>
+          <div class="rounded-2xl bg-white p-5 border border-slate-100 card">
+            <div class="text-2xl font-extrabold text-brand-800">100%</div>
+            <div class="text-xs text-slate-600">transparência e relatórios</div>
           </div>
         </div>
-        <div class="mt-8">
-          <a href="./contato.html" class="inline-flex items-center rounded-xl bg-brand-700 px-6 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Quero meu diagnóstico</a>
+      </div>
+    </section>
+
+    <!-- O que está incluso (frentes de atuação) -->
+    <section class="mx-auto max-w-7xl px-4 py-16">
+      <header class="mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900">O que fazemos na prática</h2>
+        <p class="mt-2 text-slate-600 max-w-prose">
+          Atuamos ponta a ponta: do <strong>levantamento gratuito</strong> à <strong>negociação</strong> e à
+          <strong>medição dos resultados</strong>, sempre alinhados ao seu objetivo.
+        </p>
+      </header>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Levantamento & Diagnóstico</h3>
+          <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li><strong>Levantamento gratuito</strong> dos serviços contratados</li>
+            <li>Análise de contratos e faturas</li>
+            <li>Benchmarking e inventário (linhas, DIDs, dados)</li>
+          </ul>
         </div>
-      </section>
-
-      <!-- Como funciona (linha do tempo com animação) -->
-      <section id="como-funciona" class="bg-white/60 border-y border-slate-100">
-        <div class="mx-auto max-w-5xl px-4 py-16">
-          <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900 text-center">Como funciona</h2>
-
-          <div class="relative mt-12 timeline">
-            <!-- (sem div da linha; a linha é o ::before do .timeline) -->
-
-            <ol class="space-y-12 relative z-10">
-              <!-- Etapa 1 -->
-              <li class="md:flex items-center reveal opacity-0 translate-y-6 transition duration-700 ease-out transform-gpu">
-                <div class="md:w-1/2 md:pr-8 text-right">
-                  <p class="text-xs uppercase tracking-wide text-brand-700">1. Descoberta</p>
-                  <p class="mt-2 text-slate-700">Coleta de dados, contratos e contexto de negócio.</p>
-                </div>
-                <div class="dot flex items-center justify-center w-10 h-10 rounded-full bg-brand-700 text-white font-bold mx-auto md:mx-0 transform scale-75 transition duration-700 ease-out transform-gpu">1</div>
-                <div class="hidden md:block md:w-1/2"></div>
-              </li>
-
-              <!-- Etapa 2 -->
-              <li class="md:flex items-center reveal opacity-0 translate-y-6 transition duration-700 ease-out transform-gpu">
-                <div class="hidden md:block md:w-1/2"></div>
-                <div class="dot flex items-center justify-center w-10 h-10 rounded-full bg-brand-700 text-white font-bold mx-auto md:mx-0 transform scale-75 transition duration-700 ease-out transform-gpu">2</div>
-                <div class="md:w-1/2 md:pl-8">
-                  <p class="text-xs uppercase tracking-wide text-brand-700">2. Análise</p>
-                  <p class="mt-2 text-slate-700">Gaps, riscos e drivers de custo com benchmarks.</p>
-                </div>
-              </li>
-
-              <!-- Etapa 3 -->
-              <li class="md:flex items-center reveal opacity-0 translate-y-6 transition duration-700 ease-out transform-gpu">
-                <div class="md:w-1/2 md:pr-8 text-right">
-                  <p class="text-xs uppercase tracking-wide text-brand-700">3. Plano</p>
-                  <p class="mt-2 text-slate-700">Backlog priorizado + projeção de economia e ROI.</p>
-                </div>
-                <div class="dot flex items-center justify-center w-10 h-10 rounded-full bg-brand-700 text-white font-bold mx-auto md:mx-0 transform scale-75 transition duration-700 ease-out transform-gpu">3</div>
-                <div class="hidden md:block md:w-1/2"></div>
-              </li>
-
-              <!-- Etapa 4 -->
-              <li class="md:flex items-center reveal opacity-0 translate-y-6 transition duration-700 ease-out transform-gpu">
-                <div class="hidden md:block md:w-1/2"></div>
-                <div class="dot flex items-center justify-center w-10 h-10 rounded-full bg-brand-700 text-white font-bold mx-auto md:mx-0 transform scale-75 transition duration-700 ease-out transform-gpu">4</div>
-                <div class="md:w-1/2 md:pl-8">
-                  <p class="text-xs uppercase tracking-wide text-brand-700">4. Negociação</p>
-                  <p class="mt-2 text-slate-700">RFP, consulta ao mercado e renegociação com operadoras.</p>
-                </div>
-              </li>
-
-              <!-- Etapa 5 -->
-              <li class="md:flex items-center reveal opacity-0 translate-y-6 transition duration-700 ease-out transform-gpu">
-                <div class="md:w-1/2 md:pr-8 text-right">
-                  <p class="text-xs uppercase tracking-wide text-brand-700">5. Execução & Medição</p>
-                  <p class="mt-2 text-slate-700">Implantação, SLAs, dashboards e comprovação dos resultados.</p>
-                </div>
-                <div class="dot flex items-center justify-center w-10 h-10 rounded-full bg-brand-700 text-white font-bold mx-auto md:mx-0 transform scale-75 transition duration-700 ease-out transform-gpu">5</div>
-                <div class="hidden md:block md:w-1/2"></div>
-              </li>
-            </ol>
-          </div>
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Plano & ROI</h3>
+          <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li>Simulação de cenários e projeção de <strong>economia/ROI</strong></li>
+            <li>Estratégia de negociação e <strong>RFP</strong></li>
+            <li>Políticas de uso e quick wins</li>
+          </ul>
         </div>
-      </section>
-
-      <!-- Benefícios para o cliente -->
-      <section class="mx-auto max-w-7xl px-4 py-16">
-        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900">Benefícios para sua empresa</h2>
-        <div class="mt-8 grid gap-6 md:grid-cols-3">
-          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
-            <h3 class="font-semibold text-slate-900">Economia comprovada</h3>
-            <p class="mt-2 text-sm text-slate-600">Redução média de <strong>30%–40%</strong> e casos de até <strong>80%</strong>, com comprovação contábil.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
-            <h3 class="font-semibold text-slate-900">Tempo do time preservado</h3>
-            <p class="mt-2 text-sm text-slate-600">Cuidamos de auditoria, negociação e implantação para você focar no core do negócio.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
-            <h3 class="font-semibold text-slate-900">Transparência total</h3>
-            <p class="mt-2 text-sm text-slate-600">Relatórios claros, KPIs e trilha de auditoria — você vê de onde veio cada real de economia.</p>
-          </div>
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Negociação & Fechamento</h3>
+          <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li>Consulta ao mercado e <strong>negociações com operadoras</strong></li>
+            <li>Apoio no contrato: cláusulas e <strong>SLAs</strong></li>
+            <li>Governança e compliance</li>
+          </ul>
         </div>
-        <div class="mt-8">
-          <a href="./contato.html" class="inline-flex items-center rounded-xl bg-brand-700 px-6 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Solicitar proposta</a>
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Implantação & Acompanhamento</h3>
+          <ul class="mt-3 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li>Execução técnica das mudanças</li>
+            <li>Indicadores e <strong>dashboards executivos</strong></li>
+            <li><strong>Medição dos resultados</strong> e PDCA</li>
+          </ul>
         </div>
-      </section>
-
-      <!-- FAQ curto -->
-      <section class="mx-auto max-w-7xl px-4 pb-16">
-        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900">Perguntas frequentes</h2>
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
-          <details class="group rounded-2xl border border-slate-200 bg-white p-6 open:shadow-soft">
-            <summary class="flex cursor-pointer items-center justify-between font-semibold text-slate-900 list-none">
-              Vocês trabalham por sucesso (success fee)?
-              <svg xmlns="http://www.w3.org/2000/svg" class="ml-3 h-5 w-5 text-black transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </summary>
-            <p class="mt-2 text-sm text-slate-600">
-              Sim, é opcional. No modelo WIN‑WIN o pagamento acontece apenas após a <strong>comprovação da economia</strong>.
-            </p>
-          </details>
-          <details class="group rounded-2xl border border-slate-200 bg-white p-6 open:shadow-soft">
-            <summary class="flex cursor-pointer items-center justify-between font-semibold text-slate-900 list-none">
-              São vinculados a alguma operadora?
-              <svg xmlns="http://www.w3.org/2000/svg" class="ml-3 h-5 w-5 text-black transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </summary>
-            <p class="mt-2 text-sm text-slate-600">
-              <strong>Não.</strong> Somos independentes e indicamos somente soluções que melhor atendam ao seu caso em preço e qualidade.
-            </p>
-          </details>
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Independência Total</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Não somos associados a nenhuma operadora. Indicamos apenas o que <strong>melhor atende</strong> em preço e
+            qualidade para o seu caso.
+          </p>
         </div>
-        <div class="mt-10">
-          <a href="./contato.html" class="inline-flex items-center justify-center rounded-xl bg-brand-700 px-6 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Fale com um especialista</a>
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Modelo WIN‑WIN (opcional)</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Se preferir, trabalhamos por <strong>success fee</strong>: você só paga após a <strong>comprovação da
+              economia</strong>.
+          </p>
         </div>
-      </section>
-    </main>
+      </div>
+      <div class="mt-8">
+        <a href="./contato.html"
+          class="inline-flex items-center rounded-xl bg-brand-700 px-6 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Quero
+          meu diagnóstico</a>
+      </div>
+    </section>
 
-    <footer class="border-t bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-8 text-xs text-slate-500 text-center">© <span id="y"></span> moAI TECH</div>
-    </footer>
+    <!-- Como funciona (linha do tempo com animação) -->
+    <section id="como-funciona" class="bg-white/60 border-y border-slate-100">
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900 text-center">Como funciona</h2>
 
-    <!-- Scripts -->
-    <script>
-      // Ano no footer
-      document.getElementById('y').textContent = new Date().getFullYear();
+        <div class="relative mt-12 timeline">
+          <!-- (sem div da linha; a linha é o ::before do .timeline) -->
 
-      // Toggle do menu mobile
-      function toggleMenu() {
-        const mnav = document.getElementById('mnav');
-        const btn = document.getElementById('menuBtn');
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        mnav.classList.toggle('hidden');
-        btn.setAttribute('aria-expanded', String(!expanded));
+          <ol class="space-y-12 relative z-10">
+            <!-- Etapa 1 -->
+            <li
+              class="md:flex items-center reveal opacity-0 translate-y-6 transition duration-700 ease-out transform-gpu">
+              <div class="md:w-1/2 md:pr-8 text-right">
+                <p class="text-xs uppercase tracking-wide text-brand-700">1. Descoberta</p>
+                <p class="mt-2 text-slate-700">Coleta de dados, contratos e contexto de negócio.</p>
+              </div>
+              <div
+                class="dot flex items-center justify-center w-10 h-10 rounded-full bg-brand-700 text-white font-bold mx-auto md:mx-0 transform scale-75 transition duration-700 ease-out transform-gpu">
+                1</div>
+              <div class="hidden md:block md:w-1/2"></div>
+            </li>
+
+            <!-- Etapa 2 -->
+            <li
+              class="md:flex items-center reveal opacity-0 translate-y-6 transition duration-700 ease-out transform-gpu">
+              <div class="hidden md:block md:w-1/2"></div>
+              <div
+                class="dot flex items-center justify-center w-10 h-10 rounded-full bg-brand-700 text-white font-bold mx-auto md:mx-0 transform scale-75 transition duration-700 ease-out transform-gpu">
+                2</div>
+              <div class="md:w-1/2 md:pl-8">
+                <p class="text-xs uppercase tracking-wide text-brand-700">2. Análise</p>
+                <p class="mt-2 text-slate-700">Gaps, riscos e drivers de custo com benchmarks.</p>
+              </div>
+            </li>
+
+            <!-- Etapa 3 -->
+            <li
+              class="md:flex items-center reveal opacity-0 translate-y-6 transition duration-700 ease-out transform-gpu">
+              <div class="md:w-1/2 md:pr-8 text-right">
+                <p class="text-xs uppercase tracking-wide text-brand-700">3. Plano</p>
+                <p class="mt-2 text-slate-700">Backlog priorizado + projeção de economia e ROI.</p>
+              </div>
+              <div
+                class="dot flex items-center justify-center w-10 h-10 rounded-full bg-brand-700 text-white font-bold mx-auto md:mx-0 transform scale-75 transition duration-700 ease-out transform-gpu">
+                3</div>
+              <div class="hidden md:block md:w-1/2"></div>
+            </li>
+
+            <!-- Etapa 4 -->
+            <li
+              class="md:flex items-center reveal opacity-0 translate-y-6 transition duration-700 ease-out transform-gpu">
+              <div class="hidden md:block md:w-1/2"></div>
+              <div
+                class="dot flex items-center justify-center w-10 h-10 rounded-full bg-brand-700 text-white font-bold mx-auto md:mx-0 transform scale-75 transition duration-700 ease-out transform-gpu">
+                4</div>
+              <div class="md:w-1/2 md:pl-8">
+                <p class="text-xs uppercase tracking-wide text-brand-700">4. Negociação</p>
+                <p class="mt-2 text-slate-700">RFP, consulta ao mercado e renegociação com operadoras.</p>
+              </div>
+            </li>
+
+            <!-- Etapa 5 -->
+            <li
+              class="md:flex items-center reveal opacity-0 translate-y-6 transition duration-700 ease-out transform-gpu">
+              <div class="md:w-1/2 md:pr-8 text-right">
+                <p class="text-xs uppercase tracking-wide text-brand-700">5. Execução & Medição</p>
+                <p class="mt-2 text-slate-700">Implantação, SLAs, dashboards e comprovação dos resultados.</p>
+              </div>
+              <div
+                class="dot flex items-center justify-center w-10 h-10 rounded-full bg-brand-700 text-white font-bold mx-auto md:mx-0 transform scale-75 transition duration-700 ease-out transform-gpu">
+                5</div>
+              <div class="hidden md:block md:w-1/2"></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefícios para o cliente -->
+    <section class="mx-auto max-w-7xl px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900">Benefícios para sua empresa</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Economia comprovada</h3>
+          <p class="mt-2 text-sm text-slate-600">Redução média de <strong>30%–40%</strong> e casos de até
+            <strong>80%</strong>, com comprovação contábil.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Tempo do time preservado</h3>
+          <p class="mt-2 text-sm text-slate-600">Cuidamos de auditoria, negociação e implantação para você focar no core
+            do negócio.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-white p-6 card">
+          <h3 class="font-semibold text-slate-900">Transparência total</h3>
+          <p class="mt-2 text-sm text-slate-600">Relatórios claros, KPIs e trilha de auditoria — você vê de onde veio
+            cada real de economia.</p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <a href="./contato.html"
+          class="inline-flex items-center rounded-xl bg-brand-700 px-6 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Solicitar
+          proposta</a>
+      </div>
+    </section>
+
+    <!-- FAQ curto -->
+    <section class="mx-auto max-w-7xl px-4 pb-16">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-900">Perguntas frequentes</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        <details class="group rounded-2xl border border-slate-200 bg-white p-6 open:shadow-soft">
+          <summary class="flex cursor-pointer items-center justify-between font-semibold text-slate-900 list-none">
+            Vocês trabalham por sucesso (success fee)?
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="ml-3 h-5 w-5 text-black transition-transform duration-300 group-open:rotate-180" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <p class="mt-2 text-sm text-slate-600">
+            Sim, é opcional. No modelo WIN‑WIN o pagamento acontece apenas após a <strong>comprovação da
+              economia</strong>.
+          </p>
+        </details>
+        <details class="group rounded-2xl border border-slate-200 bg-white p-6 open:shadow-soft">
+          <summary class="flex cursor-pointer items-center justify-between font-semibold text-slate-900 list-none">
+            São vinculados a alguma operadora?
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="ml-3 h-5 w-5 text-black transition-transform duration-300 group-open:rotate-180" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <p class="mt-2 text-sm text-slate-600">
+            <strong>Não.</strong> Somos independentes e indicamos somente soluções que melhor atendam ao seu caso em
+            preço e qualidade.
+          </p>
+        </details>
+      </div>
+      <div class="mt-10">
+        <a href="./contato.html"
+          class="inline-flex items-center justify-center rounded-xl bg-brand-700 px-6 py-3 text-white font-semibold shadow-soft hover:bg-brand-800">Fale
+          com um especialista</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-8 text-xs text-slate-500 text-center">© <span id="y"></span> moAI TECH</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Ano no footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Toggle do menu mobile
+    function toggleMenu() {
+      const mnav = document.getElementById('mnav');
+      const btn = document.getElementById('menuBtn');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      mnav.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!expanded));
+    }
+
+    (function () {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Itens: fade + slide + pop do marcador
+      const items = document.querySelectorAll('#como-funciona .reveal');
+      if (!items.length) return;
+
+      if (prefersReduced) {
+        items.forEach((el) => {
+          el.classList.remove('opacity-0', 'translate-y-6');
+          const dot = el.querySelector('.dot');
+          if (dot) dot.classList.remove('scale-75');
+        });
+        return;
       }
 
-      (function () {
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const idx = Array.from(items).indexOf(el);
+              el.style.transitionDelay = 100 * idx + 'ms';
+              el.classList.remove('opacity-0', 'translate-y-6');
 
-        // Itens: fade + slide + pop do marcador
-        const items = document.querySelectorAll('#como-funciona .reveal');
-        if (!items.length) return;
-
-        if (prefersReduced) {
-          items.forEach((el) => {
-            el.classList.remove('opacity-0', 'translate-y-6');
-            const dot = el.querySelector('.dot');
-            if (dot) dot.classList.remove('scale-75');
-          });
-          return;
-        }
-
-        const io = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const el = entry.target;
-                const idx = Array.from(items).indexOf(el);
-                el.style.transitionDelay = 100 * idx + 'ms';
-                el.classList.remove('opacity-0', 'translate-y-6');
-
-                const dot = el.querySelector('.dot');
-                if (dot) {
-                  dot.style.transitionDelay = 120 * idx + 'ms';
-                  dot.classList.remove('scale-75');
-                }
-                io.unobserve(el);
+              const dot = el.querySelector('.dot');
+              if (dot) {
+                dot.style.transitionDelay = 120 * idx + 'ms';
+                dot.classList.remove('scale-75');
               }
-            });
-          },
-          { threshold: 0.2 }
-        );
+              io.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
 
-        items.forEach((el) => io.observe(el));
-      })();
-    </script>
-  </body>
+      items.forEach((el) => io.observe(el));
+    })();
+  </script>
+</body>
+
 </html>
