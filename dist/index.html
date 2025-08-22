@@ -32,6 +32,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Tailwind -->
+  <link rel="preload" href="./assets/styles.css" as="style">
   <link rel="stylesheet" href="./assets/styles.css" />
 
   <style>
@@ -135,8 +136,8 @@
         </div>
 
         <div class="relative">
-          <img src="/assets/imagem-economia.webp" alt="Ilustração: economia de custos em TI e Telecom"
-            class="rounded-2xl w-full max-w-md mx-auto" loading="lazy" decoding="async" />
+          <img src="./assets/imagem-economia.webp" sizes="(max-width: 768px) 100vw, 50vw"
+            class="rounded-2xl w-full max-w-md mx-auto" width="800" height="600" alt="Economia em Telecom">
         </div>
       </div>
     </section>
@@ -302,7 +303,7 @@
     <div class="mx-auto max-w-7xl px-4 py-10 grid gap-6 md:grid-cols-3 text-sm">
       <div>
         <div class="flex items-center gap-2">
-          <img src="./assets/favicon.svg" alt="moAI TECH" class="h-8 w-6" loading="lazy" />
+          <img src="./assets/favicon.svg" alt="moAI TECH" class="h-8 w-6" />
           <span class="font-semibold tracking-tight">moAI TECH</span>
         </div>
         <p class="mt-4 text-slate-600">Soluções em TI &amp; Telecom com foco em redução de custos, Big Data e automação.
