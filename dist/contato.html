@@ -253,26 +253,40 @@
     }
 
     form.addEventListener('submit', async (e) => {
-      // Validação visual apenas, mas permite envio padrão para Netlify
+      e.preventDefault();
       const okNome = showError('nome', !!form.nome.value.trim(), 'nomeError');
       const okEmail = showError('email', /.+@.+\..+/.test(form.email.value), 'emailError');
       const okMsg = showError('mensagem', !!form.mensagem.value.trim(), 'mensagemError');
       const okLgpd = form.querySelector('#lgpd').checked;
       if (!okLgpd) {
-        e.preventDefault();
         status.textContent = 'Para enviar, aceite a Política de Privacidade.';
         return;
       }
       if (!(okNome && okEmail && okMsg)) {
-        e.preventDefault();
         status.textContent = 'Verifique os campos destacados.';
         return;
       }
       if (form.website && form.website.value) {
-        e.preventDefault();
         return;
       }
-      // Permite envio padrão para Netlify Forms
+      // Envio AJAX para Netlify Forms
+      const formData = new FormData(form);
+      try {
+        await fetch(form.action || '/', {
+          method: 'POST',
+          headers: { 'Accept': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        });
+        form.reset();
+        status.textContent = '';
+        successCard.classList.remove('hidden');
+        window.scrollTo({ top: successCard.offsetTop - 80, behavior: 'smooth' });
+        setTimeout(() => {
+          successCard.classList.add('hidden');
+        }, 6000);
+      } catch (err) {
+        status.textContent = 'Ocorreu um erro ao enviar. Tente novamente.';
+      }
     });
   </script>
 </body>
