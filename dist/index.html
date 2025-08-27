@@ -55,6 +55,11 @@
       box-shadow: 0 0 0 3px rgba(8, 67, 117, .35)
     }
 
+    /* Sombra suave abaixo do header */
+    .header-shadow {
+      box-shadow: 0 4px 16px -4px rgba(8, 67, 117, 0.10);
+    }
+
     .no-underline:hover {
       text-decoration: none
     }
@@ -131,7 +136,7 @@
     para o conteúdo</a>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100 header-shadow">
     <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
       <a href="./index.html" class="flex items-center gap-2 no-underline">
         <img src="./assets/favicon.svg" alt="moAI TECH" class="h-8 w-6" loading="eager" decoding="async" />
